@@ -26,7 +26,7 @@ public class SpanningTree {
 	
 	private static int prim(Graph g) {
 		int totalWeight = 0;
-		PriorityQueue<Edge> queue = new PriorityQueue<Edge>(new EdgeComparator());
+		PriorityQueue<Edge> queue = new PriorityQueue<Edge>(10, new EdgeComparator());
 		
 		String startingCity = g.adjacencyList.keySet().iterator().next();
 		visit(queue, g, startingCity);
