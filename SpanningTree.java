@@ -29,7 +29,7 @@ public class SpanningTree {
 		visit(queue, g, startingCity);
 	
 		while(!queue.isEmpty()){
-			Edge minimumEgde = queue.poll();
+			Edge minimumEgde = queue.poll(); //log(N) - see javadoc
 			String v = minimumEgde.fromVertex;
 			String w = minimumEgde.toVertex;
 			if(g.visited.get(v) && g.visited.get(w)) continue; //skip if both vertices has been visited
@@ -43,7 +43,7 @@ public class SpanningTree {
 	private static void visit(PriorityQueue<Edge> pq,Graph g, String v){
 		g.visited.put(v, true);
 		for (Edge e : g.adjacencyList.get(v)){
-			pq.add(e);
+			pq.add(e); //log(N) - see javadoc
 		}
 	}
 
